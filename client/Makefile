@@ -1,11 +1,11 @@
 CC=javac
 CFLAGS=-d
 DIR=.
-FILES=server.java
+FILES=client.java
 
 JAR=jar
 JFLAGS=cvfe
-JNAME=WCServer.jar
+JNAME=WCClient.jar
 MAIN=Main
 JFILES=*.class
 
@@ -13,7 +13,7 @@ RUN_FLAGS=-Dprogram.name=$(JNAME)
 
 build:
 	$(CC) $(CFLAGS) $(DIR) $(FILES)
-	$(JAR) $(JFLAGS) $(JNAME) $(MAIN)  $(JFILES)
+	$(JAR) $(JFLAGS) $(JNAME) $(MAIN) $(JFILES)
 
 run: build
 	printf "\n\n"

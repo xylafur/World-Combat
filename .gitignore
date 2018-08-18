@@ -1,3 +1,5 @@
 
 # Java class files
 *.class
+.*.sw*
+.*.un*
