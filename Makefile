@@ -1,9 +1,17 @@
-CC=javac
-FILES=main.java
-RUN=java -cp
-build:
-	$(CC) $(FILES)
+#The way make files work is they check if a file is created, for the case of my
+#server recursive make file call it checks if server is defined, and it is as
+#a directory.  The .PHONY target below tells make that 'server' is not the name
+#of a file but rather just some recipie
+.PHONY: server client
 
-run: build
-	$(RUN) . Main
+all: server client
 
+server:
+	$(MAKE) -C server
+
+client:
+	$(MAKE) -C client
+
+clean:
+	$(MAKE) -C server clean
+	$(MAKE) -C client clean
