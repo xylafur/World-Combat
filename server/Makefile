@@ -1,9 +1,7 @@
-BUILD_DIR=build
-
 CC=javac
 CFLAGS=-d
 DIR=.
-FILES=startup.java
+FILES=server.java
 
 JAR=jar
 JFLAGS=cvfe
@@ -11,12 +9,15 @@ JNAME=WCServer.jar
 MAIN=Main
 JFILES=*.class
 
+RUN_FLAGS=-Dprogram.name=$(JNAME)
+
 build:
 	$(CC) $(CFLAGS) $(DIR) $(FILES)
 	$(JAR) $(JFLAGS) $(JNAME) $(MAIN)  $(JFILES)
 
 run: build
-	java -jar $(JNAME)
+	printf "\n\n"
+	java $(RUN_FLAGS) -jar $(JNAME)
 
 clean:
 	rm $(JNAME) *.class
