@@ -12,6 +12,9 @@ server:
 client:
 	$(MAKE) -C client
 
+run:
+	$(MAKE) -C $(target) run
+
 clean:
-	$(MAKE) -C server clean
-	$(MAKE) -C client clean
+	-$(MAKE) -C server clean
+	-$(MAKE) -C client clean
