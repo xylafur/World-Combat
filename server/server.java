@@ -27,7 +27,7 @@ class Main {
             DataInputStream dis = server.getDataInputStream(6666);
             server.readFromClient(dis);
         } catch (Exception e){
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 }

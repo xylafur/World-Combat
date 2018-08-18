@@ -19,9 +19,8 @@ class Main {
 
         try{
             client.writeToServer("localhost", 6666, "Hello Server!");
-
         }catch(Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 }
